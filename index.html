@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="sq">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evidenca për realizimin e planit 2024 - 2025</title>
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evidenca për realizimin e planit 2024 - 2025</title>
+  <style>
         body {
             font-family: Times New Roman;
             margin: 0px;
@@ -158,59 +159,34 @@
 
 
     </style>
+
 </head>
 <body>
-     
-       <h3 style="text-align:center; color:blue;">REALIZIMI I PLANIT</h3>
+<h3>REALIZIMI I PLANIT</h3>
+<form id="planForm">
+  <label>Mësuesi Kujdestar</label>
+  <div style="display: flex; gap: 10px;">
+    <input type="text" name="emri" placeholder="Emri" required>
+    <input type="text" name="mbiemri" placeholder="Mbiemri" required>
+  </div>
 
-  <form id="planForm">
-
-    <label>Mësuesi Kujdestar</label>
-    <div style="display: flex; gap: 10px;">
-      <input type="text" name="emri" placeholder="Emri" required>
-      <input type="text" name="mbiemri" placeholder="Mbiemri" required>
-    </div>
-
-    <label>Lëndët</label>
-    <table id="planTable">
-      <thead>
-        <tr>
-	  <th>Klasa</th>
-          <th>Lënda</th>
-          <th>Plan</th>
-          <th>Fakt</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-	  <td style="box-sizing: border-box;"><select id="klasa" name="klasa" required>
-             <option value="" disabled selected>Zgjidh klasen nga lista e meposhtme. Zgjidh klasen nga lista e meposhtme.</option>
-    <option value="10-A">10-A</option>
-    <option value="10-B">10-B</option>
-    <option value="10-C">10-C</option>
-    <option value="10-D">10-D</option>
-    <option value="10-E">10-E</option>
-    <option value="10-F">10-F</option>
-    <option value="10-G">10-G</option>
-    <option value="10-H">10-H</option>
-    <option value="10-I">10-I</option>
-    <option value="11-A">11-A</option>
-    <option value="11-B">11-B</option>
-    <option value="11-C">11-C</option>
-    <option value="11-D">11-D</option>
-    <option value="11-E">11-E</option>
-    <option value="11-F">11-F</option>
-    <option value="11-G">11-G</option>
-    <option value="11-H">11-H</option>
-    <option value="12-A">12-A</option>
-    <option value="12-B">12-B</option>
-    <option value="12-C">12-C</option>
-    <option value="12-D">12-D</option>
-    <option value="12-E">12-E</option>
-    <option value="12-F">12-F</option>
-    <option value="12-G">12-G</option>
-    <option value="10-A(KP)">10-A(KP)</option>
+  <label>Lëndët</label>
+  <table id="planTable">
+    <thead>
+      <tr>
+        <th>Klasa</th>
+        <th>Lënda</th>
+        <th>Plan</th>
+        <th>Fakt</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <select name="klasa[]" required>
+            <option value="" disabled selected>Zgjidh klasen nga lista e meposhtme. Zgjidh klasen nga lista e meposhtme.</option>
+            <option value="10-A">10-A</option><option value="10-B">10-B</option><option value="10-C">10-C</option><option value="10-D">10-D</option><option value="10-E">10-E</option><option value="10-F">10-F</option><option value="10-G">10-G</option><option value="10-H">10-H</option><option value="10-I">10-I</option><option value="11-A">11-A</option><option value="11-B">11-B</option><option value="11-C">11-C</option><option value="11-D">11-D</option><option value="11-E">11-E</option><option value="11-F">11-F</option><option value="11-G">11-G</option><option value="11-H">11-H</option><option value="12-A">12-A</option><option value="12-B">12-B</option><option value="12-C">12-C</option><option value="12-D">12-D</option><option value="12-E">12-E</option><option value="12-F">12-F</option><option value="12-G">12-G</option>    <option value="10-A(KP)">10-A(KP)</option>
     <option value="10-B(KP)">10-B(KP)</option>
     <option value="10-C(KP)">10-C(KP)</option>
     <option value="11-A(KP)">11-A(KP)</option>
@@ -220,231 +196,165 @@
     <option value="12-B(KP)">12-B(KP)</option>
     <option value="13-A(KP)">13-A(KP)</option>
     <option value="13-B(KP)">13-B(KP)</option>
-    
-  </select></td>
-          <td><input type="text" name="lenda[]" required ></td>
-          <td><input type="number" name="plan[]" required></td>
-          <td><input type="number" name="fakt[]" required></td>
-          <td><button type="button" class="delete-button" onclick="deleteRow(this)">Hiq</button></td>
-        </tr>
-      </tbody>
-    </table>
-    <button type="button" onclick="addRow()" style="margin-top:10px; color:green; background-color: lightblue;">Shto lëndë</button>
 
-        <!-- Firma -->
-        <label for="firma">Firma:</label>
-        <div class="signature-pad">
-            <canvas id="signatureCanvas"></canvas>
-
-        </div>
-        <button type="button" onclick="clearSignature()">Fshij firmën</button>
-        <input type="hidden" id="firma" name="firma" ><br>
-
-        <!-- Butoni për Dërgim -->
-        <button type="submit"  style="background-color: blue;">Dërgo</button>
-    </form>
-
-    <script>
-
-        function addRow() {
-      const tbody = document.querySelector('#planTable tbody');
-      const row = document.createElement('tr');
-      row.innerHTML = `
-	<td><select id="klasa" name="klasa" required>
-    <option value="" disabled selected>Zgjidh klasen nga lista e meposhtme, Zgjidh klasen nga lista e meposhtme.</option>
-    <option value="10-A">10-A</option>
-    <option value="10-B">10-B</option>
-    <option value="10-C">10-C</option>
-    <option value="10-D">10-D</option>
-    <option value="10-E">10-E</option>
-    <option value="10-F">10-F</option>
-    <option value="10-G">10-G</option>
-    <option value="10-H">10-H</option>
-    <option value="10-I">10-I</option>
-    <option value="11-A">11-A</option>
-    <option value="11-B">11-B</option>
-    <option value="11-C">11-C</option>
-    <option value="11-D">11-D</option>
-    <option value="11-E">11-E</option>
-    <option value="11-F">11-F</option>
-    <option value="11-G">11-G</option>
-    <option value="11-H">11-H</option>
-    <option value="12-A">12-A</option>
-    <option value="12-B">12-B</option>
-    <option value="12-C">12-C</option>
-    <option value="12-D">12-D</option>
-    <option value="12-E">12-E</option>
-    <option value="12-F">12-F</option>
-    <option value="12-G">12-G</option>
-    <option value="10-A(KP)">10-A(KP)</option>
-    <option value="10-B(KP)">10-B(KP)</option>
-    <option value="10-C(KP)">10-C(KP)</option>
-    <option value="11-A(KP)">11-A(KP)</option>
-    <option value="11-B(KP)">11-B(KP)</option>
-    <option value="11-C(KP)">11-C(KP)</option>
-    <option value="12-A(KP)">12-A(KP)</option>
-    <option value="12-B(KP)">12-B(KP)</option>
-    <option value="13-A(KP)">13-A(KP)</option>
-    <option value="13-B(KP)">13-B(KP)</option>
-    
-  </select></td>
-
-        <td><input type="text" name="lenda[]" required ></td>
+          </select>
+        </td>
+        <td><input type="text" name="lenda[]" required></td>
         <td><input type="number" name="plan[]" required></td>
         <td><input type="number" name="fakt[]" required></td>
         <td><button type="button" class="delete-button" onclick="deleteRow(this)">Hiq</button></td>
-      `;
-      tbody.appendChild(row);
-    }
-
-    function deleteRow(btn) {
-      btn.closest('tr').remove();
-    }
-
-
-        // Funksioni për të pastruar firmën (i njëjtë si më parë)
-        function clearSignature() {
-            const canvas = document.getElementById('signatureCanvas');
-            const ctx = canvas.getContext('2d');
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            document.getElementById('firma').value = '';
-        }
-
-        // Funksioni për të kapur firmën si Base64 (i njëjtë si më parë)
-        function captureSignature() {
-            const canvas = document.getElementById('signatureCanvas');
-            const dataURL = canvas.toDataURL(); // Konverto në Base64
-            document.getElementById('firma').value = dataURL;
-        }
-
-        // Inicializo Signature Pad (i njëjtë si më parë)
-        const canvas = document.getElementById('signatureCanvas');
-        const ctx = canvas.getContext('2d');
-        let isDrawing = false;
-	
-
-        // Funksioni për të marrë koordinatat e sakta (i njëjtë si më parë)
-        function getCanvasCoordinates(event) {
-            const rect = canvas.getBoundingClientRect();
-            const scaleX = canvas.width / rect.width;
-            const scaleY = canvas.height / rect.height;
-
-            let x, y;
-
-            if (event.touches) {
-                // Për ekranin e prekshëm
-                x = (event.touches[0].clientX - rect.left) * scaleX;
-                y = (event.touches[0].clientY - rect.top) * scaleY;
-            } else {
-                // Për miun
-                x = (event.clientX - rect.left) * scaleX;
-                y = (event.clientY - rect.top) * scaleY;
-            }
-
-            return { x, y };
-        }
-
-        // Funksioni për të filluar vizatimin (i njëjtë si më parë)
-        function startDrawing(event) {
-            event.preventDefault(); // Parandaloni sjelljen e parazgjedhur (p.sh., scroll)
-            isDrawing = true;
-            const { x, y } = getCanvasCoordinates(event);
-            ctx.beginPath();
-            ctx.moveTo(x, y);
-        }
-
-        // Funksioni për të vazhduar vizatimin (i njëjtë si më parë)
-        function draw(event) {
-            event.preventDefault(); // Parandaloni sjelljen e parazgjedhur
-            if (isDrawing) {
-                const { x, y } = getCanvasCoordinates(event);
-                ctx.lineTo(x, y);
-                ctx.stroke();
-            }
-        }
-
-        // Funksioni për të ndaluar vizatimin (i njëjtë si më parë)
-        function stopDrawing() {
-            isDrawing = false;
-            captureSignature(); // Kap firmën kur përdoruesi mbaron shenjimin
-        }
-
-        // Event listeners për miun (i njëjtë si më parë)
-        canvas.addEventListener('mousedown', startDrawing);
-        canvas.addEventListener('mousemove', draw);
-        canvas.addEventListener('mouseup', stopDrawing);
-        canvas.addEventListener('mouseleave', stopDrawing);
-
-        // Event listeners për ekranin e prekshëm (telefon) (i njëjtë si më parë)
-        canvas.addEventListener('touchstart', startDrawing);
-        canvas.addEventListener('touchmove', draw);
-        canvas.addEventListener('touchend', stopDrawing);
-
-	
-
-   document.getElementById('planForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-    
-    const submitButton = event.target.querySelector('button[type="submit"]');
-    const originalText = submitButton.textContent;
-    submitButton.textContent = 'Po kontrolloj...';
-    submitButton.disabled = true;
-
-    // Kontrollo firmën
-    const firma = document.getElementById('firma').value;
-    if (!firma) {
-        alert('Ju lutem, vendosni firmën tuaj!');
-        submitButton.textContent = originalText;
-        submitButton.disabled = false;
-        return;
-    }
-
-   const emri = e.target.emri.value.trim();
-      const mbiemri = e.target.mbiemri.value.trim();
-      
-      const lendet = [...e.target.querySelectorAll('input[name="lenda[]"]')].map(el => el.value.trim());
-      const klasat = [...e.target.querySelectorAll('input[name="klasa[]"]')].map(el => el.value.trim());
-      const planet = [...e.target.querySelectorAll('input[name="plan[]"]')].map(el => el.value.trim());
-      const faktet = [...e.target.querySelectorAll('input[name="fakt[]"]')].map(el => el.value.trim());
-
-      const rreshta = lendet.map((l, i) => `• ${l} | Klasa: ${klasat[i]}| Plan: ${planet[i]} | Fakt: ${faktet[i]}`).join('\n');
-
-      const data = {
-        rows: [{
-          cells: [
-            { column: "Emri", value: emri },
-            { column: "Mbiemri", value: mbiemri },
-            { column: "Lendet", value: rreshta },
-            { column: "Firma", value: firma }
-          ]
-        }]
-      };
-
-      const response = await fetch("https://coda.io/apis/v1/docs/DJONJb548H/tables/Realizimi%20i%20planit/rows"
-, {
-        method: "POST",
-        headers: {
-          "Authorization": "Bearer b935802a-f8e5-4172-a38f-4314d5d38a92", // ← Zëvendëso me token tënd personal
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      });
-
-      if (response.ok) {
-  alert("Të dhënat u dërguan me sukses!");
-  e.target.reset();
-  clearSignature();
-  window.location.href = 'dalja.html';
-} else {
-  const error = await response.json();
-  console.log("Gabimi nga Coda:", error);
-  alert("Gabim gjatë dërgimit:\n" + error.message);
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" onclick="addRow()" style="margin-top:10px; background-color: lightblue;">Shto lëndë</button>
+  <label for="firma">Firma:</label>
+  <div class="signature-pad">
+    <canvas id="signatureCanvas"></canvas>
+  </div>
+  <button type="button" onclick="clearSignature()">Fshij firmën</button>
+  <input type="hidden" id="firma" name="firma">
+  <button type="submit" style="background-color: blue; color: white;">Dërgo</button>
+</form>
+<script>
+const klasat = `<option value="10-A">10-A</option><option value="10-B">10-B</option><option value="10-C">10-C</option><option value="10-D">10-D</option><option value="10-E">10-E</option><option value="10-F">10-F</option><option value="10-G">10-G</option><option value="10-H">10-H</option><option value="10-I">10-I</option><option value="11-A">11-A</option><option value="11-B">11-B</option><option value="11-C">11-C</option><option value="11-D">11-D</option><option value="11-E">11-E</option><option value="11-F">11-F</option><option value="11-G">11-G</option><option value="11-H">11-H</option><option value="12-A">12-A</option><option value="12-B">12-B</option><option value="12-C">12-C</option><option value="12-D">12-D</option><option value="12-E">12-E</option><option value="12-F">12-F</option><option value="12-G">12-G</option>    <option value="10-A(KP)">10-A(KP)</option>
+    <option value="10-B(KP)">10-B(KP)</option>
+    <option value="10-C(KP)">10-C(KP)</option>
+    <option value="11-A(KP)">11-A(KP)</option>
+    <option value="11-B(KP)">11-B(KP)</option>
+    <option value="11-C(KP)">11-C(KP)</option>
+    <option value="12-A(KP)">12-A(KP)</option>
+    <option value="12-B(KP)">12-B(KP)</option>
+    <option value="13-A(KP)">13-A(KP)</option>
+    <option value="13-B(KP)">13-B(KP)</option>
+`;
+function addRow() {
+  const tbody = document.querySelector('#planTable tbody');
+  const row = document.createElement('tr');
+  row.innerHTML = `
+    <td><select name="klasa[]" required><option value="" disabled selected>Zgjidh klasen nga lista e meposhtme. Zgjidh klasen nga lista e meposhtme.</option>${klasat}</select></td>
+    <td><input type="text" name="lenda[]" required></td>
+    <td><input type="number" name="plan[]" required></td>
+    <td><input type="number" name="fakt[]" required></td>
+    <td><button type="button" class="delete-button" onclick="deleteRow(this)">Hiq</button></td>`;
+  tbody.appendChild(row);
 }
-
-    });
-
-
-    </script>
-
+function deleteRow(btn) {
+  btn.closest('tr').remove();
+}
+function clearSignature() {
+  const canvas = document.getElementById('signatureCanvas');
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  document.getElementById('firma').value = '';
+}
+function captureSignature() {
+  const canvas = document.getElementById('signatureCanvas');
+  const dataURL = canvas.toDataURL();
+  document.getElementById('firma').value = dataURL;
+}
+const canvas = document.getElementById('signatureCanvas');
+const ctx = canvas.getContext('2d');
+let isDrawing = false;
+function getCanvasCoordinates(event) {
+  const rect = canvas.getBoundingClientRect();
+  const scaleX = canvas.width / rect.width;
+  const scaleY = canvas.height / rect.height;
+  let x, y;
+  if (event.touches) {
+    x = (event.touches[0].clientX - rect.left) * scaleX;
+    y = (event.touches[0].clientY - rect.top) * scaleY;
+  } else {
+    x = (event.clientX - rect.left) * scaleX;
+    y = (event.clientY - rect.top) * scaleY;
+  }
+  return { x, y };
+}
+canvas.addEventListener('mousedown', e => {
+  isDrawing = true;
+  const { x, y } = getCanvasCoordinates(e);
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+});
+canvas.addEventListener('mousemove', e => {
+  if (isDrawing) {
+    const { x, y } = getCanvasCoordinates(e);
+    ctx.lineTo(x, y);
+    ctx.stroke();
+  }
+});
+canvas.addEventListener('mouseup', () => {
+  isDrawing = false;
+  captureSignature();
+});
+canvas.addEventListener('mouseleave', () => isDrawing = false);
+canvas.addEventListener('touchstart', e => {
+  e.preventDefault();
+  isDrawing = true;
+  const { x, y } = getCanvasCoordinates(e);
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+});
+canvas.addEventListener('touchmove', e => {
+  e.preventDefault();
+  if (isDrawing) {
+    const { x, y } = getCanvasCoordinates(e);
+    ctx.lineTo(x, y);
+    ctx.stroke();
+  }
+});
+canvas.addEventListener('touchend', () => {
+  isDrawing = false;
+  captureSignature();
+});
+document.getElementById('planForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const submitButton = e.target.querySelector('button[type="submit"]');
+  submitButton.textContent = 'Po kontrolloj...';
+  submitButton.disabled = true;
+  const firma = document.getElementById('firma').value;
+  if (!firma) {
+    alert('Ju lutem, vendosni firmën tuaj!');
+    submitButton.textContent = 'Dërgo';
+    submitButton.disabled = false;
+    return;
+  }
+  const emri = e.target.emri.value.trim();
+  const mbiemri = e.target.mbiemri.value.trim();
+  const lendet = [...e.target.querySelectorAll('input[name="lenda[]"]')].map(el => el.value.trim());
+  const klasat = [...e.target.querySelectorAll('select[name="klasa[]"]')].map(el => el.value.trim());
+  const planet = [...e.target.querySelectorAll('input[name="plan[]"]')].map(el => el.value.trim());
+  const faktet = [...e.target.querySelectorAll('input[name="fakt[]"]')].map(el => el.value.trim());
+  const rreshta = lendet.map((l, i) => `• ${l} | Klasa: ${klasat[i]} | Plan: ${planet[i]} | Fakt: ${faktet[i]}`).join('\n');
+  const data = {
+    rows: [{
+      cells: [
+        { column: "Emri", value: emri },
+        { column: "Mbiemri", value: mbiemri },
+        { column: "Lendet", value: rreshta },
+        { column: "Firma", value: firma }
+      ]
+    }]
+  };
+  const response = await fetch("https://coda.io/apis/v1/docs/DJONJb548H/tables/Realizimi%20i%20planit/rows", {
+    method: "POST",
+    headers: {
+      "Authorization": "Bearer b935802a-f8e5-4172-a38f-4314d5d38a92",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  });
+  if (response.ok) {
+    alert("Të dhënat u dërguan me sukses!");
+    e.target.reset();
+    clearSignature();
+    window.location.href = 'dalja.html';
+  } else {
+    const error = await response.json();
+    alert("Gabim gjatë dërgimit:\n" + error.message);
+  }
+  submitButton.textContent = 'Dërgo';
+  submitButton.disabled = false;
+});
+</script>
 </body>
 </html>
